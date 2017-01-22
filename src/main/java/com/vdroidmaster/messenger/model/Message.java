@@ -1,8 +1,11 @@
 package com.vdroidmaster.messenger.model;
 
 import java.util.Date;
+import java.util.NavigableMap;
+import java.util.TreeMap;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement
 public class Message {
@@ -11,6 +14,7 @@ public class Message {
 	private String message;
 	private String author;
 	private Date created;
+	private NavigableMap<Long, Comment> comments;
 
 	public Message() {
 	}
@@ -51,5 +55,18 @@ public class Message {
 
 	public void setCreated(Date created) {
 		this.created = created;
+	}
+
+	@XmlTransient
+	public NavigableMap<Long, Comment> getComments() {
+		
+		if(this.comments == null) {
+			this.comments = new TreeMap<Long, Comment>();
+		}
+		return this.comments;
+	}
+
+	public void setComments(NavigableMap<Long, Comment> comments) {
+		this.comments = comments;
 	}
 }

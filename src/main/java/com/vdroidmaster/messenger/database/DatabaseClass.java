@@ -9,19 +9,20 @@ import com.vdroidmaster.messenger.model.Profile;
 
 public class DatabaseClass {
 
-	private static NavigableMap<Long, Message> messages = new TreeMap<Long, Message>();
 	private static Map<String, Profile> profiles = new TreeMap<String, Profile>();
-
-	public static NavigableMap<Long, Message> getMessages() {
-		return messages;
-	}
+	private static NavigableMap<Long, Message> messages = new TreeMap<Long, Message>();
 
 	public static Map<String, Profile> getProfiles() {
 		return profiles;
 	}
+	
+	public static NavigableMap<Long, Message> getMessages() {
+		return messages;
+	}
 
 	public static void clearDatabase() {
-		messages = new TreeMap<Long, Message>();
+		
 		profiles = new TreeMap<String, Profile>();
+		messages = new TreeMap<Long, Message>();
 	}
 }
