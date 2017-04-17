@@ -17,7 +17,7 @@ import com.vdroidmaster.messenger.model.Message;
 import com.vdroidmaster.messenger.resource.bean.MessageFilterBean;
 import com.vdroidmaster.messenger.service.MessageService;
 
-@Path("/Messages")
+@Path("/messages")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class MessageResource {
@@ -66,7 +66,7 @@ public class MessageResource {
 		messageService.removeMessage(messageId);
 	}
 	
-	@Path("/{messageId}/Comments")
+	@Path("/{messageId}/comments")
 	public CommentResource getCommentResource() {
 		return new CommentResource();
 	}

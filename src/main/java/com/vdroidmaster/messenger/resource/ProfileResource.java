@@ -15,7 +15,7 @@ import javax.ws.rs.core.MediaType;
 import com.vdroidmaster.messenger.model.Profile;
 import com.vdroidmaster.messenger.service.ProfileService;
 
-@Path("/Profiles")
+@Path("/profiles")
 @Consumes(MediaType.APPLICATION_JSON)
 @Produces(MediaType.APPLICATION_JSON)
 public class ProfileResource {
