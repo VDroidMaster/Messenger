@@ -6,8 +6,10 @@ import java.util.TreeMap;
 
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
+@XmlType(propOrder = {"id", "author", "message", "created"})
 public class Message {
 
 	private Long id;
@@ -23,6 +25,12 @@ public class Message {
 		this.message = message;
 		this.author = author;
 		this.created = new Date();
+	}
+	
+	public Message(String message, String author, Date created) {
+		this.message = message;
+		this.author = author;
+		this.created = created;
 	}
 
 	public Long getId() {

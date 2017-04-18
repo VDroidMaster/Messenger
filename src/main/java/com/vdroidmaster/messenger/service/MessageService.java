@@ -1,5 +1,8 @@
 package com.vdroidmaster.messenger.service;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -15,11 +18,29 @@ public class MessageService {
 
 	private MessageService() {
 		
-		Message m1 = new Message("Hello World 1", "Droid Master 1");
-		Message m2 = new Message("Hello World 2", "Droid Master 2");
+		DateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
+		
+		Message m1 = null;
+		Message m2 = null;
+		Message m3 = null;
+		Message m4 = null;
+		Message m5 = null;
+		
+		try {
+			m1 = new Message("Hi this is Tom.", "Tom", dateFormat.parse("2012-09-03"));
+			m2 = new Message("Hi this is Jerry.", "Jerry", dateFormat.parse("2013-06-05"));
+			m3 = new Message("Hi this is Pluto.", "Pluto", dateFormat.parse("2012-12-05"));
+			m4 = new Message("Hi this is Minnie.", "Minnie", dateFormat.parse("2012-10-09"));
+			m5 = new Message("Hi this is Mickey.", "Mickey", dateFormat.parse("2015-11-08"));
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
 		
 		addMessage(m1);
 		addMessage(m2);
+		addMessage(m3);
+		addMessage(m4);
+		addMessage(m5);
 	}
 	
 	public static MessageService getInstance() {

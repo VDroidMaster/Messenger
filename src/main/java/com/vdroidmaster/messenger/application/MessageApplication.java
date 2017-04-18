@@ -15,11 +15,11 @@ public class MessageApplication extends Application {
 	@Override
 	public Set<Class<?>> getClasses() {
 		
-	    Set<Class<?>> classes = new HashSet<>();
+	    Set<Class<?>> resources = new HashSet<>();
 	    
-	    classes.add(MessageResource.class);
-	    classes.add(ProfileResource.class);
+	    resources.add(MessageResource.class);
+	    resources.add(ProfileResource.class);
 	    
-	    return classes;
+	    return resources;
 	}
 }

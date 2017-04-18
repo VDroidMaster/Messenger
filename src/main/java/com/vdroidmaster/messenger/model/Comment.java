@@ -3,8 +3,10 @@ package com.vdroidmaster.messenger.model;
 import java.util.Date;
 
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
 
 @XmlRootElement
+@XmlType(propOrder = {"id", "author", "comment", "created"})
 public class Comment {
 
 	private Long id;

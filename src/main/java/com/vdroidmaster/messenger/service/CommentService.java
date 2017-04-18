@@ -15,11 +15,13 @@ public class CommentService {
 	
 	private CommentService() {
 	
-		Comment c1 = new Comment("Comment1", "Droid Master1");
-		Comment c2 = new Comment("Comment2", "Droid Master2");
+		Comment c1 = new Comment("Comment1", "Tom");
+		Comment c2 = new Comment("Comment2", "Jerry");
+		Comment c3 = new Comment("Comment3", "Pluto");
 		
 		addComment(Long.valueOf(1), c1);
-		addComment(Long.valueOf(2), c2);
+		addComment(Long.valueOf(1), c2);
+		addComment(Long.valueOf(1), c3);
 	}
 	
 	public static CommentService getInstance() {
